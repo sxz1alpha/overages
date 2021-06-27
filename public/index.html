@@ -14,15 +14,33 @@
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
         crossorigin="anonymous"
     />
-    <style src="./public/assets/css/style.css"></style>
+    <style rel="stylesheet" src="./assets/css/style.css"></style>
     <title>Overage-Hotlist</title>
 </head>
-<body>
-    <header>
-
+<body class="d-flex flex-column min-vh-100">
+    <header class="text-center bg-primary mb-2">
+        <h1 class="text-warning">Overage<span id="header-span" class="text-danger">HOT</span>list</h1>
     </header>
-    <section id="hotlist">
-        <button type="button" class="btn btn-primary">Primary</button>
+    <section class="d-flex align-items-center">
+        <form class='col col-4 container border border-primary rounded'>
+            <div class="form-group">
+            <label for="exampleInputEmail1">Email address:</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            <a href="www.facebook.com" id="password-reset" class="form-text">Forgot email.</a>
+            </div>
+            <div class="form-group">
+            <label for="exampleInputPassword1">Password:</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            <a href="www.facebook.com" id="password-reset" class="form-text">Forgot password.</a>
+            </div>
+            <button type="submit" class="btn btn-primary col col-2 m-2">Submit</button>
+
+        </form>
     </section>
+    <footer id="footer" class="bg-primary mt-auto">
+        <h2>UintaCrypto 2021&#169;</h2>
+        <h2></h2>
+    </footer>
 </body>
 </html>
