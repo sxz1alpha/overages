@@ -1,0 +1,29 @@
+{
+  "name": "overages",
+  "version": "1.0.0",
+  "description": "The scope of this application is to query goverment API's in order to find money owed to individuals or companies. it will create a database of overages, contact information for who is owed the money or their next of kin of they are deceased.",
+  "main": "server.js",
+  "scripts": {
+    "test": "jest",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sxz1alpha/overages.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sxz1alpha/overages/issues"
+  },
+  "homepage": "https://github.com/sxz1alpha/overages#readme",
+  "dependencies": {
+    "bootstrap": "^5.0.2",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "jest": "^27.0.5"
+  }
+}
