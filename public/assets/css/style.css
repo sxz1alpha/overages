@@ -1,5 +1,5 @@
 :root {
-    --primary-color: rgb(255, 60, 0);
+    --primary-color: rgb(248, 71, 17);
     --secondary-color: rgb(136, 11, 136);
 }
 
@@ -30,6 +30,11 @@ header h1 {
 header a {
     text-decoration: none;
     color: var(--primary-color);
+    font-family: 'Ramabhadra', sans-serif;
+}
+
+header a span {
+    color: red;
 }
 
 header nav {
@@ -86,10 +91,30 @@ footer h2 a {
     background-position: 0 -10px;
 }
 
-.button:hover {
+.button-clr {
+    background-color: #ea0028;
+    background-image: linear-gradient(180deg, #ff9a8b 0%, #ea0028 100%);
+    transition: all .5s ease-out;
+    background-size: 1px 100px;
+    background-position: 0 -10px;
+}
+
+.button:hover, .button-clr:hover {
     background-position: 1px -50px;
 }
 
+.form-text {
+    color: var(--primary-color);
+}
 #hotlist {
     background-color: gray;
+}
+
+#sort-bar {
+    background-color: grey;
+}
+
+#feed {
+    height: 100vh;
+    overflow: auto;
 }
