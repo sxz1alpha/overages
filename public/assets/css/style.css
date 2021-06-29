@@ -118,3 +118,22 @@ footer h2 a {
     height: 100vh;
     overflow: auto;
 }
+
+.modal {
+    color: var(--primary-color);
+}
+
+#modal-content {
+    background-color: var(--secondary-color);
+}
+
+.modal div div h3 {
+    display: flex;
+    justify-content: center;
+}
+.modal div div h5 {
+    margin-left: 5px;
+}
+.modal div div p {
+    margin-left: 5px;
+}

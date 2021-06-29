@@ -1,3 +1,3 @@
-$('#modelToggle').on('click', 'a', function () {
-    $('#myModel').model();
+$('#modelToggle').on('click', function () {
+    $('#myModel').modal();
 });

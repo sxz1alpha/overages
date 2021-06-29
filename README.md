@@ -7,3 +7,4 @@ This application will also serve as data collection that streamlines the documen
 data flow: 
 server pulls on an intervul from thirdparty API's to collect data.
 Data is translated into the format of the tables and stored in our local database.
+users call the local server database for query requests.
