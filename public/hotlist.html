@@ -49,6 +49,7 @@
                 <label for="states">
                     <p class="form-text">State:</p>
                     <select name="states" id="states" class="rounded">
+                        <option value="">Georgia</option>
                         <option value="Georgia">Georgia</option>
                         <option value="Florida">Florida</option>
                         <option value="Pennsylvania">Pennsylvania</option>
@@ -68,6 +69,7 @@
                     <input type="reset" value="Reset" class="rounded button-clr">
                 </label>
             </form>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal"></button>
         </div>
         <div id="Hotlist" class="col-8 flex-d border border-dark">
         <div id="sort-bar" class="row">
@@ -78,7 +80,7 @@
         <ul class="col-12 m-2">
             <!-- list items appended here  -->
             <li class = "row shadow">
-            <button type="button" id="var" class="d-flex col-12 justify-content-between btn button rounded" data-toggle="modal" data-target="#test-modal">
+            <button id="modelToggle" type="button" class="d-flex col-12 justify-content-between btn button rounded" data-toggle="modal" data-target="#myModal">
                 <div class="col">
                     <div class="row">    
                         <i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;
@@ -113,7 +115,7 @@
     </footer>
 
     <!-- modal section  -->
-    <div id="myModel" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="Overage Details" aria-hidden="true">
+    <div id="myModel" class="modal" tabindex="-1" role="document" aria-labelledby="Overage Details" aria-hidden="true">
         <div class="modal-content">
             <h3 id="modal-header">test header</h3>
             <h5 id="modal-value">test</h5>
@@ -134,15 +136,13 @@
 
     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     <script 
-        src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" 
-        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" 
-        crossorigin="anonymous">
+    src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js">
     </script>
     <script 
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" 
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" 
-        crossorigin="anonymous">
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js">
     </script>
-    <script src="./assets/js/script.js"></script>
+    <script 
+    src="./assets/js/script.js">
+    </script>
 </body>
 </html>
