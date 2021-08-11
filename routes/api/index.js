@@ -1,5 +1,7 @@
-const apiPull = (path) => {
-    fetch(path)
-        .then(response => response.json())
-        .then(data => console.log(data));
-};
+const router = require('express').Router();
+
+userRoutes = require('./user-routes');
+
+router.use('/user', userRoutes);
+
+module.exports = router;
