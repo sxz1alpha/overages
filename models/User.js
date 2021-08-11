@@ -1,3 +1,6 @@
+const { Model, DataTypes } = require('sequelize');
+
+
 class User {
     constructor(name = '') {
         this.name = name;
