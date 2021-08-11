@@ -2,18 +2,6 @@ const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 
-
-// class User {
-//     constructor(name = '') {
-//         this.name = name;
-//         this.email = email;
-//         this.phone = phone;
-//         this.ss = ss;
-//         this.add = address;
-//         this.Econ = emergency_contact
-//     }
-// }
-
 class User extends Model {
     
 }
@@ -46,18 +34,12 @@ User.init(
             }
         },
         phonenumber: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            validate: {
-                len: [10-12]
-            }
+            type: DataTypes.CHAR(15),
+            allowNull: true,
         },
         address: {
             type: DataTypes.STRING,
             allowNull: true,
-            validate: {
-                len: [15-170]
-            }
         }
     },
     {    
@@ -68,3 +50,5 @@ User.init(
     modelName: 'user'
     }
 );
+
+module.exports = User;
