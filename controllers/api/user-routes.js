@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { User } = require('../../models');
+const sessConf = require('../../utils/sessConf');
 
 // routes built in order to follow CRUD (create, read, update, delete) model.
 
@@ -13,12 +14,61 @@ router.post('/', (req, res) => {
         address: req.body.address
     })
     .then(userData => {
-        res.json(userData);
+        req.session.save(() => {
+            req.session.id = userData.id;
+            req.session.username = userData.username;
+            req.session.loggedIn = true;
+
+            res.json(userData);
+        })
     })
     .catch(err => {
         console.log(err);
         res.status(500).json(err);
     })
+});
+
+router.post('/login', (req, res) => {
+    User.findOne({
+        where: {
+            email:req.body.email
+        }
+    })
+    .then(userData => {
+        if(!userData) {
+            res.status(400).json({ message: ' no user found with that id.'});
+            return;
+        }
+
+        const validPassword = userData.checkPassword(req.body.password);
+
+        if (!validPassword) {
+          res.status(400).json({ message: 'Your username password combination doesnt match any in the databse!' });
+          return;
+        }
+
+        req.session.save(() => {
+            req.session.id = userData.id;
+            req.session.username = userData.username;
+            req.session.loggedIn = true;
+
+            res.json(userData);
+        });
+    })    
+    
+    res.render('hotlist');
+    
+});
+//logout functionality
+router.post('/logout', (req, res) => {
+    if(req.session.loggedIn) {
+        req.session.destroy(() => {
+            res.status(204).end();
+        });
+    } else {
+        res.status(404).end()
+    }
+
 });
 
 // get all users
@@ -32,6 +82,7 @@ router.get('/', (req, res) => {
         res.status(500).json(err);
     });
 });
+
 
 
 //get specific user by id
@@ -56,8 +107,9 @@ router.get('/:id', (req, res) => {
 })
 
 // update user info
-router.put('/:id', (req,res) => {
+router.put('/:id', sessConf, (req,res) => {
     User.update(req.body, {
+        individualHooks: true,
         where: {
             id: req.params.id
         }
@@ -75,7 +127,7 @@ router.put('/:id', (req,res) => {
 });
 
 //delete a user
-router.delete('/:id', (req, res) => {
+router.delete('/:id', sessConf, (req, res) => {
     User.destroy({
         where: {
             id: req.params.id

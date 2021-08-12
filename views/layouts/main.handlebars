@@ -28,84 +28,14 @@
             </h1>
         </div>
         <nav>
-        <ul>
-            <li>
-                <a href=""><i class="fas fa-archive"></i></a>
-            </li>
-            <li>
-                <a href=""><i class="fas fa-user"></i></a>
-            </li>
-            <li>
-                <a href=""><i class="fas fa-sign-out-alt"></i></a>
-            </li>
-        </ul>
+            <a href="/myhotlist">My Hotlist</a>
+            <a href="hotlist">Hotlist</a>
+            <a href="/logout">logout</a>
         </nav>
     </header>
     <!-- main section  -->
     <main class="d-flex">
-        <div id="form-div" class="col-2 flex-d container-fluid h-100">
-            <h2 class="form-text">Filters</h2>
-            <form class="main-form">
-                <label for="states">
-                    <p class="form-text">State:</p>
-                    <select name="states" id="states" class="rounded">
-                        <option value="none">None</option>
-                        <option value="Georgia">Georgia</option>
-                        <option value="Florida">Florida</option>
-                        <option value="Pennsylvania">Pennsylvania</option>
-                        <!-- <option value=""></option> -->
-                    </select>
-                    <p class="form-text">County:</p>
-                    <select name="County" id="County" class="rounded">
-                        <option value="none">None</option>
-                        <option value="Dekalb">Dekalb</option>
-                        <option value="Muscogee">Muscogee</option>
-                        <option value="Grady">Grady</option>
-                        <option value="Augusta-Richmond">Augusta-Richmond</option>
-                        <option value="Fulton">Fulton</option>
-                        <!-- <option value=""></option> -->
-                    </select>
-                    <br><br>
-                    <input type="submit" value="Submit" class="rounded button">
-                    <input type="reset" value="Reset" class="rounded button-clr">
-                </label>
-            </form>
-        </div>
-        <div id="Hotlist" class="col-8 flex-d border border-dark">
-        <div id="sort-bar" class="row">
-            <div class="col"><a>Location</a></div>
-            <div class="col"><a>Date Posted</a></div>
-            <div class="col text-right"><a>Value</a></div>
-        </div>
-        <ul class="col-12 m-2">
-            <!-- list items appended here  -->
-            <li class = "row shadow">
-            <button id="modelToggle" type="button" class="d-flex col-12 justify-content-between btn button rounded" data-toggle="modal" data-target="#myModal">
-                <div class="col">
-                    <div class="row">    
-                        <i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;
-                        <a>Dekelb, GA</a>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="row">
-                        <i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;
-                        <a>May, 1 2020</a>
-                    </div>
-                </div>
-                <div class="d-flex col justify-content-end">
-                    <div class="row">
-                        <a>$</a>&nbsp;
-                        <a>97,302</a>
-                    </div>
-                </div>
-            </button>
-            </li>
-        </ul>
-        </div>
-        <div id="feed" class="col-2 scroll">
-            <a class="twitter-timeline" href="https://twitter.com/TwitterDev?ref_src=twsrc%5Etfw">Tweets by TwitterDev</a> 
-        </div>
+        {{{ body }}}
     </main>
     <!-- footer section  -->
     <footer id="footer" class="mt-auto fixed-bottom">
@@ -114,24 +44,7 @@
         </h2>
     </footer>
     <!-- modal section  -->
-    <div id="myModel" class="modal" tabindex="-1" role="document" aria-labelledby="Overage Details" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div id="modal-content" class="modal-content">
-                <h3 id="modal-header">Parcel #11 234 01 002</h3>
-                <iframe width="500" height="500" frameborder="0" scrolling="no" allowfullscreen src="https://arcg.is/11WK11"></iframe>
-                <h5 id="modal-value">Overage amount: $97,302.77</h5>
-                <p id="model-defendant">Defendant: Charles R Holmes</p>
-                <p id="model-codefend">CoDefendant: N/A</p>
-                <p id="model-county">County: Dekelb</p>
-                <p id="model-location">Owner Mailing address: 6798 BROWNS MILL FERRY CT LITHONIA GA
-                    30038 </p>
-                <!-- <p id="model-alive-status">Alive/dead status</p>
-                <p id="model-lein">Lein</p>
-                <p id="model-title">Title</p>
-                <p id="model-contact">Phone number for defendant:</p> -->
-            </div>
-        </div>
-    </div>
+
     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

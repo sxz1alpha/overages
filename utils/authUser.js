@@ -1,1 +1,0 @@
-// will have a function that authenticates that a user session is in progress.
