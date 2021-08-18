@@ -1,15 +1,7 @@
 const router = require('express').Router();
-const sequelize = require('../config/connection');
 const { Defendant } = require('../models');
 const sessConf = require('../utils/sessConf');
 
-router.get('/loginPage', (req, res) => {
-    if(req.session.loggedIn) {
-        res.redirect('/');
-        return;
-    }
-    res.render('loginPage');
-});
 
 router.get('/', sessConf, (req, res) => {
     Defendant.findAll({})
@@ -22,6 +14,14 @@ router.get('/', sessConf, (req, res) => {
         console.log(err);
         res.status(500).json(err);
     });
+});
+
+router.get('/new', sessConf, (req, res) => {
+    if(!req.session.loggedIn) {
+        res.render('loginPage')
+        return;
+    }
+    res.render('newDefendant');
 });
 
 router.get('/:id', sessConf, (req, res) => {

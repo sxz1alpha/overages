@@ -1,18 +1,38 @@
-<form class="sign-up">
+<div class="container">
     <div>
-        <label for="username">Username:</label>
-        <input type="text" id="username-sign-up" />
+        <form class="form" id="sign-up-form">
+            <h1>Sign Up</h1>
+            <p>Please fill out all of the fields below to make an account.</p>
+            <div>
+                <label for="username-sign-up">Username:</label>
+            </div>
+            <div>
+                <input type="text" id="username-sign-up" />
+            </div>
+            <div>
+                <label for="password-sign-up">Password:</label>
+            </div>
+            <div>
+                <input type="password" id="password-sign-up" />
+            </div>
+            <div>
+                <label for="email-sign-up">Email:</label>
+            </div>
+            <div>
+                <input type="text" id="email-sign-up" />
+            </div>
+            <div>
+                <label for="phone-number-sigh-up">Phone Number:</label>
+            </div>
+            <div>
+                <input type="text" id="phone-number-sign-up">
+            </div>
+            <div>
+                <button class="button" type="submit">submit</button>
+                <a href="/login">login</a>
+            </div>
+        </form>
     </div>
-    <div>
-        <label for="email-sign-up">Email:</label>
-        <input type="text" id="email-sign-up" />
-    </div>
-    <div>
-        <label for="password-sign-up">Password:</label>
-        <input type="text" id="password-sign-up" />
-    </div>
-    <div>
-        <label for="phone-number-sigh-up">Phone Number:</label>
-        <input type="text" id="phone-number-sign-up">
-    </div>
-</form>
+</div>
+
+<script src="assets/js/sign-up.js"></script>

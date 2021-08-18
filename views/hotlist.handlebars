@@ -1,45 +1,31 @@
-<div id="form-div" class="col-2 flex-d container-fluid h-100">
-    <h2 class="form-text">Filters</h2>
-    <form class="main-form">
-        <label for="states">
-            <p class="form-text">State:</p>
-            <select name="states" id="states" class="rounded">
-                <option value="none">None</option>
-                <option value="Georgia">Georgia</option>
-                <option value="Florida">Florida</option>
-                <option value="Pennsylvania">Pennsylvania</option>
-                <!-- <option value=""></option> -->
-            </select>
-            <p class="form-text">County:</p>
-            <select name="County" id="County" class="rounded">
-                <option value="none">None</option>
-                <option value="Dekalb">Dekalb</option>
-                <option value="Muscogee">Muscogee</option>
-                <option value="Grady">Grady</option>
-                <option value="Augusta-Richmond">Augusta-Richmond</option>
-                <option value="Fulton">Fulton</option>
-                <!-- <option value=""></option> -->
-            </select>
-            <br><br>
-            <input type="submit" value="Submit" class="rounded button">
-            <input type="reset" value="Reset" class="rounded button-clr">
-        </label>
-    </form>
+<div id="form-div" class="col-2 h-100">
+        <div class="mt-3">
+        <h2 class="form-text"><i class="fa fa-upload fa-5x" aria-hidden="true"></i></h2>
+        <div id="upzone">
+            <h5>Drag File Here</h5>
+         </div>
+        <div id="upstat"></div>
+            <form id="form-div" class="mt-2">
+                {{!-- <input class="button" type="file" name="upfile" accept=""> --}}
+                <input class="button" type="submit" value="Upload File">
+            </form>
+            <button class="button" src="/new">Add Defendant</button>
+        </div>
 </div>
 <div id="Hotlist" class="col-8 flex-d border border-dark">
-<div id="sort-bar" class="row">
-    <div class="col"><a>Defendant</a></div>
-    <div class="col"><a>Sale Date</a></div>
-    <div class="col text-right"><a>Value</a></div>
-</div>
-<ul class="col-12 m-2">
-   {{> hotlist-item}}
+    <div id="sort-bar" class="row">
+        <div class="col"><a>Defendant</a></div>
+        <div class="col"><a>Sale Date</a></div>
+        <div class="col text-right"><a>Value</a></div>
+    </div>
+    <ul class="col-12 m-2">
+        {{> hotlist-item}}
 
-</ul>
+    </ul>
 </div>
 <div id="feed" class="col-2 scroll">
     <a class="twitter-timeline" href="https://twitter.com/TwitterDev?ref_src=twsrc%5Etfw">Tweets by TwitterDev</a> 
 </div>
 
 
-<script src="/assets/js/modal.js"></script>
+<script src="assets/js/dd-upload.js"></script>

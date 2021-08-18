@@ -1,7 +1,6 @@
 const router = require('express').Router();
 const { User } = require('../../models');
 const sessConf = require('../../utils/sessConf');
-
 // routes built in order to follow CRUD (create, read, update, delete) model.
 
 //create a new user.
@@ -11,11 +10,10 @@ router.post('/', (req, res) => {
         password: req.body.password,
         email: req.body.email,
         phonenumber: req.body.phonenumber,
-        address: req.body.address
     })
     .then(userData => {
         req.session.save(() => {
-            req.session.id = userData.id;
+            req.session.user_id = userData.id;
             req.session.username = userData.username;
             req.session.loggedIn = true;
 
@@ -28,10 +26,11 @@ router.post('/', (req, res) => {
     })
 });
 
+// login to user account
 router.post('/login', (req, res) => {
     User.findOne({
         where: {
-            email:req.body.email
+            email: req.body.email
         }
     })
     .then(userData => {
@@ -48,17 +47,15 @@ router.post('/login', (req, res) => {
         }
 
         req.session.save(() => {
-            req.session.id = userData.id;
+            req.session.user_id = userData.id;
             req.session.username = userData.username;
             req.session.loggedIn = true;
 
-            res.json(userData);
+            res.json({ user: userData, message: 'You are logged in.' });
         });
-    })    
-    
-    res.render('hotlist');
-    
+    })     
 });
+
 //logout functionality
 router.post('/logout', (req, res) => {
     if(req.session.loggedIn) {

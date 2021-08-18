@@ -38,10 +38,6 @@ User.init(
         phonenumber: {
             type: DataTypes.CHAR(15),
             allowNull: true,
-        },
-        address: {
-            type: DataTypes.STRING,
-            allowNull: true,
         }
     },
     {
@@ -61,8 +57,7 @@ User.init(
         freezeTableName: true,
         underscored: true,
         modelName: 'user'
-    }
-    
+    }  
 );
 
 module.exports = User;

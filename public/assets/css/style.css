@@ -3,6 +3,13 @@
     --secondary-color: rgb(136, 11, 136);
 }
 
+.container {
+    display: flex;
+    justify-content: center;    
+}
+
+
+
 body {
     height: 100vh;
 }
@@ -77,10 +84,39 @@ footer h2 a {
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
+.form {
+    border-style: groove;
+    margin-top: 5%;
+    height: 50%;
+    border-radius: 5px;
+}
+
+.form div {
+    margin: 10px;
+}
 
 #form-div {
     background-color: rgb(71, 71, 112);
-    height: 100vh;
+    display: flex;
+    justify-content: center;
+    
+}
+
+#upzone {
+    height: 25%;
+    width: 100%;
+    background-color: var(--secondary-color);
+    border-style: solid;
+    border-color: var(--primary-color);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--primary-color);
+}
+
+#upzone.highlight {
+    background: var(--primary-color);
 }
 
 .button {
