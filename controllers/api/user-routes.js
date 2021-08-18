@@ -3,6 +3,8 @@ const { User } = require('../../models');
 const sessConf = require('../../utils/sessConf');
 // routes built in order to follow CRUD (create, read, update, delete) model.
 
+
+// =======================================CREATE=======================================
 //create a new user.
 router.post('/', (req, res) => {
     User.create({
@@ -13,8 +15,8 @@ router.post('/', (req, res) => {
     })
     .then(userData => {
         req.session.save(() => {
-            req.session.user_id = userData.id;
-            req.session.username = userData.username;
+            req.session.id = userData.id;
+            req.session.email = userData.email;
             req.session.loggedIn = true;
 
             res.json(userData);
@@ -25,7 +27,7 @@ router.post('/', (req, res) => {
         res.status(500).json(err);
     })
 });
-
+// =======================================READ=============================================
 // login to user account
 router.post('/login', (req, res) => {
     User.findOne({
@@ -35,7 +37,7 @@ router.post('/login', (req, res) => {
     })
     .then(userData => {
         if(!userData) {
-            res.status(400).json({ message: ' no user found with that id.'});
+            res.status(400).json({ message: 'No user found with that id.'});
             return;
         }
 
@@ -47,8 +49,8 @@ router.post('/login', (req, res) => {
         }
 
         req.session.save(() => {
-            req.session.user_id = userData.id;
-            req.session.username = userData.username;
+            req.session.id = userData.id;
+            req.session.email = userData.email;
             req.session.loggedIn = true;
 
             res.json({ user: userData, message: 'You are logged in.' });
@@ -103,6 +105,7 @@ router.get('/:id', (req, res) => {
     });
 })
 
+// =================================================UPDATE============================================
 // update user info
 router.put('/:id', sessConf, (req,res) => {
     User.update(req.body, {
@@ -123,6 +126,7 @@ router.put('/:id', sessConf, (req,res) => {
     });
 });
 
+// ====================================================DELETE=====================================================
 //delete a user
 router.delete('/:id', sessConf, (req, res) => {
     User.destroy({

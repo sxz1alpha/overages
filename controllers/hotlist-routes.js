@@ -7,8 +7,7 @@ router.get('/', sessConf, (req, res) => {
     Defendant.findAll({})
     .then(defendantData => {
         const defendant = defendantData.map(defendant => defendant.get({ plain: true }));
-        console.log(defendant);
-        res.render('hotlist', {defendant});
+        res.render('hotlist', {defendant,  loggedIn: req.session.loggedIn });
     })
     .catch(err => {
         console.log(err);

@@ -3,7 +3,7 @@ const { User } = require('../models');
 
 
 //renders the login page
-router.get('/login', (req, res) => {
+router.get('/', (req, res) => {
     if(req.session.loggedIn) {
         res.redirect('/hotlist');
         return;

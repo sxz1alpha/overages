@@ -2,11 +2,13 @@ const express = require('express');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
 const routes = require('./controllers');
-const sequelize = require('./config/connection');
+const Sequelize = require('./config/connection');
 const path = require('path');
 const methods = require('./utils/methods');
 const hbs = exphbs.create({ methods });
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
+require('dotenv').config();
+
 
 const sess = {
     secret: process.env.SECRET,
@@ -14,7 +16,9 @@ const sess = {
     resave: false,
     saveUninitialized: true,
     store: new SequelizeStore ({
-        db:sequelize
+        db: Sequelize,
+        checkExpirationInterval: 60 * 1000,
+        expiration: 10 * 60 * 60 * 1000,
     })
 };
 
@@ -31,6 +35,6 @@ app.set('view engine', 'handlebars');
 // Turns on routes
 app.use(routes);
 
-sequelize.sync({ force: false }).then(() => {
+Sequelize.sync({ force: false }).then(() => {
     app.listen(PORT, () => console.log("Overages is now online!"));
 });

@@ -1,6 +1,6 @@
 const sessConf = (req, res, next) => {
-    if(!req.session.user_id) {
-        res.redirect('/login')
+    if(!req.session.id) {
+        res.redirect('/')
     } else {
         next();
     }

@@ -3,6 +3,7 @@ const { Defendant } = require('../../models');
 
 // routes built in order to follow CRUD (create, read, update, delete) model.
 
+// =========================================CREATE======================================
 //create a new user.
 router.post('/', (req, res) => {
     Defendant.create({
@@ -24,6 +25,7 @@ router.post('/', (req, res) => {
     })
 });
 
+// =================================================READ===========================================
 // get all users
 router.get('/', (req, res) => {
     Defendant.findAll({})
@@ -55,6 +57,7 @@ router.get('/:id', (req, res) => {
     });
 })
 
+// ======================================================UPDATE===================================================
 // update user info
 router.put('/:id', (req,res) => {
     Defendant.update(req.body, {
@@ -74,6 +77,7 @@ router.put('/:id', (req,res) => {
     });
 });
 
+// ======================================================DELETE=============================================
 //delete a user
 router.delete('/:id', (req, res) => {
     Defendant.destroy({

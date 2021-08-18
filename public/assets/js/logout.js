@@ -5,7 +5,7 @@ async function logout() {
     });
 
     if(response.ok) {
-        document.location.replace('/login');
+        document.location.replace('/');
     } else {
         console.log(response.statusText);
     }
