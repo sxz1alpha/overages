@@ -5,14 +5,15 @@ $('#hotlist-ul').on('click', 'button', async function(event) {
     let id = event.target.id
     
     const response = await fetch(`/api/defendant/${id}`, {
-        method: 'GET',
-        headers: { 'Content-Type': 'application/json' }    
+        method: 'GET',   
     })
+    
 
     if(response.ok) {
-        let def = response.def_name
-        let parcel_id = def.parcel_id
-        console.log(parcel_id);
+        // let data = response.json();
+        console.log(response);
+        // $('#myModal').modal('show');
+
     } else {
         alert(response.statusText)
     }
