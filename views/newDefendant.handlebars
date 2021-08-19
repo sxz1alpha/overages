@@ -15,25 +15,39 @@
 <div id="Hotlist" class="col-8 flex-d border border-dark">
 <ul class="col-12 m-2">
    <div class="container">
-        <form class="form">
+        <form class="form" id="def-submit">
             <div>
                 <h2>New Defendant</h2>
                 <p>Fill out the fields below to add a new defendant to the database</p>
-                <label for="parcel-id">Parcel-ID:</label>
-                <input type="text" id="parcel-id" required>
-                <label for="def-name">Defendant:</label>
-                <input type="text" id="def-name" required>
-                <label for="co-def">Co-Defendant:</label>
-                <input type="text" id="co-def">
-                <label for="amount">Amount:</label>
-                <input type="text" id="amount" required>
-                <label for="sale-date">Sale Date:</label>
-                <input type="text" id="sale-date" required>
-                <label for="address">Owners mailing address:</label>
-                <input type="text" id="address">
-                <label for="city-state"></label>
-                <input type="text" id="city-state">
-                <button type="submit" id="def-submit">Submit</button>
+                <div>
+                    <label for="parcel-id">Parcel-ID:</label><br>
+                    <input type="text" id="parcel-id" required>
+                </div>
+                <div>
+                    <label for="def-name">Defendant:</label><br>
+                    <input type="text" id="def-name" required>
+                </div>
+                <div>
+                    <label for="co-def">Co-Defendant:</label><br>
+                    <input type="text" id="co-def">
+                </div>
+                <div>
+                    <label for="amount">Amount:</label><br>
+                    <input type="text" id="amount" required>
+                </div>
+                <div>
+                    <label for="sale-date">Sale Date:</label><br>
+                    <input type="text" id="sale-date" required>
+                </div>
+                <div>
+                    <label for="address">Owners mailing address:</label><br>
+                    <input type="text" id="address">
+                </div>
+                <div>
+                    <label for="city-state">City and State:</label><br>
+                    <input type="text" id="city-state">
+                </div>
+                <button type="submit">Submit</button>
             </div>
         </form>
     </div>
@@ -43,4 +57,3 @@
     <a class="twitter-timeline" href="https://twitter.com/TwitterDev?ref_src=twsrc%5Etfw">Tweets by TwitterDev</a> 
 </div>
 
-<script src="assets/js/add-defendant.js"></script>

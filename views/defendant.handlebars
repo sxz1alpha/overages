@@ -1,0 +1,26 @@
+{{#if this.defendant}}
+<section class="defendant">
+    <div></div>
+    <div>
+        <p>Parcel-ID: {{this.parcel_id}}</p>
+    </div>
+    <div>
+        <p>Defendant: {{ this.def_name}}</p>
+    </div>
+    <div>
+        <p>Co-Defendant: {{ this.co_def_name}}</p>
+    </div>
+    <div>
+        <p>Amount: {{defendant.amount}}</p>
+    </div>
+    <div>
+        <p>Sale Date: {{defendant.sale_date}}</p>
+    </div>
+    <div>
+        <p>Address: {{defendant.owner_mail_add}}</p>
+    </div>
+    <div>
+        <p>City and State: {{defendant.city_state}}</p>
+    </div>
+</section>
+{{/if}}
