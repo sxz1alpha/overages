@@ -15,13 +15,6 @@ router.get('/', sessConf, (req, res) => {
     });
 });
 
-router.get('/new', sessConf, (req, res) => {
-    if(!req.session.loggedIn) {
-        res.render('loginPage')
-        return;
-    }
-    res.render('newDefendant');
-});
 
 router.get('/:id', sessConf, (req, res) => {
     Defendant.findOne({

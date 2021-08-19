@@ -1,22 +1,21 @@
 {{#each defendant}}
 <li class = "row shadow">
-<button id="modelToggle{{id}}" type="button" class="d-flex col-12 justify-content-between btn button rounded m-1" data-toggle="modal" data-target="#myModal{{id}}">
-    <div class="col">
-        <div class="row">    
-            <i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;
-            <a>{{def_name}}</a>
+<button id="{{id}}" type="button" class="d-flex col-12 justify-content-between btn button rounded m-1" data-toggle="modal" data-target="#myModal">
+    <div id="{{id}}" class="col">
+        <div id="{{id}}" class="row">    
+            <i id="{{id}}" class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;
+            <a id="{{id}}" >{{def_name}}</a>
         </div>
     </div>
-    <div class="col">
-        <div class="row">
-            <i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;
-            <a>{{sale_date}}</a>
+    <div class="col" id="{{id}}">
+        <div class="row" id="{{id}}">
+            <i id="{{id}}" class="fa fa-calendar" aria-hidden="true"></i>&nbsp;
+            <a id="{{id}}">{{sale_date}}</a>
         </div>
     </div>
-    <div class="d-flex col justify-content-end">
-        <div class="row">
-            
-            <a>{{amount}}</a>
+    <div id="{{id}}" class="d-flex col justify-content-end">
+        <div id="{{id}}" class="row">
+            <a id="{{id}}">{{amount}}</a>
         </div>
     </div>
 </button>

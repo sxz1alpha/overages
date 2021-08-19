@@ -6,10 +6,11 @@ const { Defendant } = require('../../models');
 // =========================================CREATE======================================
 //create a new user.
 router.post('/', (req, res) => {
+    console.log('hit post route')
     Defendant.create({
         parcel_id: req.body.parcel_id,
         def_name: req.body.def_name,
-        co_def: req.body.co_def,
+        co_def_name: req.body.co_def_name,
         amount: req.body.amount,
         sale_date: req.body.sale_date,
         owner_mail_add: req.body.owner_mail_add,
@@ -26,7 +27,7 @@ router.post('/', (req, res) => {
 });
 
 // =================================================READ===========================================
-// get all users
+// get all defendant
 router.get('/', (req, res) => {
     Defendant.findAll({})
     .then(defendantData => res.json(defendantData))
@@ -37,7 +38,7 @@ router.get('/', (req, res) => {
 });
 
 
-//get specific user by id
+//get specific defendant by id
 router.get('/:id', (req, res) => {
     Defendant.findOne({
         where: {
@@ -87,7 +88,7 @@ router.delete('/:id', (req, res) => {
     })
     .then(defendantData => {
         if(!defendantData) {
-            res.status(404).json({ message: ''})
+            res.status(404).json({ message: 'User Account Deleted'})
         }
         res.json(defendantData);
     })

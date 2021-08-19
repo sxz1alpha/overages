@@ -1,5 +1,6 @@
 async function addDefendant(event) {
     event.preventDefault();
+    console.log('front end before if')
 
     const parcel_id = document.querySelector('#parcel-id').value.trim();
     const def_name = document.querySelector('#def-name').value.trim();
@@ -9,8 +10,12 @@ async function addDefendant(event) {
     const owner_mail_add = document.querySelector('#address').value.trim();
     const city_state = document.querySelector('#city-state').value.trim();
 
-    if( parcel_id && def_name && amount && sale_date ) {
-        const response = await fetch('/api/defendant', {
+    if( parcel_id 
+        // && def_name && amount && sale_date 
+        ) {
+        
+        console.log('hit front end')
+        const response = await fetch('api/defendant', {
             method: 'POST',
             body: JSON.stringify({
                 parcel_id,
