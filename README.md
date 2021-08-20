@@ -3,7 +3,9 @@
 Deployed application: https://pacific-falls-73425.herokuapp.com/
 ## Description
 
-    Overages is a simple app that allows skip tracers to build a list of clients and locate them.
+
+
+Overages is a simple app that allows skip tracers to build a list of clients and locate them.
 The goal of this app it to sort through the mass of information that the government has on citizents it owes money.
 
 The MVP allows a user to create account, log in and add potential clients to the overage hotlist manually. With a clean easy to navigate interface
@@ -20,3 +22,4 @@ The end goal for this application is to use web scrapers to query the government
 
 ## Preview
 
+![Screenshot (42)](https://user-images.githubusercontent.com/80006081/130167038-9bee1450-4524-4d38-a7e0-930f24084e1a.png)
