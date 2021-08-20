@@ -85,7 +85,6 @@ footer h2 a {
 }
 
 .form {
-    border-style: groove;
     margin-top: 5%;
     height: 50%;
     border-radius: 5px;
@@ -161,6 +160,11 @@ footer h2 a {
 
 #modal-content {
     background-color: var(--secondary-color);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: center;
 }
 
 .modal div div h3 {
