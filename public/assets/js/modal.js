@@ -12,13 +12,13 @@ $('#hotlist-ul').on('click', 'button', async function(event) {
     .then((defendant) => {
         if(defendant) {
 
-            $('#modal-parcel-id').replaceWith(defendant.parcel_id)
-            $('#modal-def-name').replaceWith(defendant.def_name)
-            $('#modal-co-def').replaceWith(defendant.co_def_name)
-            $('#modal-amount').replaceWith(defendant.amount)
-            $('#modal-sale-date').replaceWith(defendant.sale_date)
-            $('#modal-address').replaceWith(defendant.owner_mail_add)
-            $('#modal-city-state').replaceWith(defendant.city_state)
+            $('#modal-parcel-id').replaceWith(`<span id="modal-parcel-id">${defendant.parcel_id}</span>`)
+            $('#modal-def-name').replaceWith(`<span id="modal-def-name">${defendant.def_name}</span>`)
+            $('#modal-co-def').replaceWith(`<span id="modal-co-def">${defendant.co_def_name}</span>`)
+            $('#modal-amount').replaceWith(`<span id="modal-amount">${defendant.amount}</span>`)
+            $('#modal-sale-date').replaceWith(`<span id="modal-sale-date">${defendant.sale_date}</span>`)
+            $('#modal-address').replaceWith(`<span id="modal-address">${defendant.owner_mail_add}</span>`)
+            $('#modal-city-state').replaceWith(`<span id="modal-city-state">${defendant.city_state}</span>`)
 
             $('#myModal').modal('show');
 
@@ -26,16 +26,6 @@ $('#hotlist-ul').on('click', 'button', async function(event) {
             alert("defendant not found");
         }
     })
-
-    // if(response.ok) {
-    //     let data = response.json()
-    //     console.log(data);
-    //     let defendant = 'hahahahahahahaha test' //TODO: find parent defendant object in the dom
-
-
-    // } else {
-    // }
-
 });
 
 
